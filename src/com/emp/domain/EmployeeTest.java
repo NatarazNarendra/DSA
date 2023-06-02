@@ -2,6 +2,8 @@ package com.emp.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeTest {
 
@@ -26,6 +28,11 @@ public class EmployeeTest {
 		employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
 		employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
 	
+		
+		Map<String, Long> noOfMaleAndFemaleEmployees=
+				employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+				         
+				System.out.println(noOfMaleAndFemaleEmployees);
 	}
 
 }
