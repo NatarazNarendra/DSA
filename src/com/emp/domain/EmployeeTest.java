@@ -165,6 +165,7 @@ public class EmployeeTest {
  		partitionEmployeesByAge.forEach((key, value) -> {
        	 System.out.println("Key !!!!!: " + key + " Value @@@@@: " + value);
        	 });
+ 		System.out.println("Java stream examples are above");
 	}
 
 }
